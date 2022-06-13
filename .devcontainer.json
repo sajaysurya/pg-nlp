@@ -1,0 +1,24 @@
+{
+    "name": "pg-nlp",
+    "context": ".",
+	"dockerFile": "Dockerfile",
+	"containerUser": "bob",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/bob/pg-nlp,type=bind,consistency=cached",
+    "workspaceFolder": "/home/bob/pg-nlp",
+	"runArgs": [ "--gpus", "all"],
+	"mounts": ["source=${localEnv:HOME}/.bash_history,target=/home/bob/.bash_history,type=bind,consistency=cached"],
+	"postCreateCommand": "bash /home/bob/pg-nlp/.devcontainer/post_create_commands.sh",
+    "extensions": [
+		"janisdd.vscode-edit-csv",
+		"bobmagicii.autofoldyeah",
+		"ms-toolsai.jupyter",
+		"ms-toolsai.jupyter-renderers",
+		"ms-python.vscode-pylance",
+		"ms-python.python",
+		"KevinRose.vsc-python-indent",
+		"GitHub.copilot",
+		"GitHub.vscode-pull-request-github",
+		"codezombiech.gitignore",
+		"eamodio.gitlens"
+	]
+}
